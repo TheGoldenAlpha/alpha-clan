@@ -1,3 +1,15 @@
+/* Ziegel gleich gross wie auf der Startseite (gleiche Formel wie in home.css) */
+body {
+  --fw: min(calc((100vw - 20px) / 2.2), 900px);
+  --u: calc(var(--fw) / 1912);
+  --brick-w: calc(var(--u) * 35);
+  --brick-h: calc(var(--u) * 16.4);
+  --cap: calc(var(--u) * 18);
+}
+@media (max-width: 760px) {
+  body { --fw: calc(100vw - 36px); }
+}
+
 .hero .sub { margin-top: 18px; }
 
 .plate {
