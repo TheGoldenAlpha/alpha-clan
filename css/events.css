@@ -119,7 +119,7 @@
 /* Video steht rechts auf dem Block, direkt bei den Event-Karten */
 .ev-stage .fighter {
   position: absolute;
-  right: -100px;
+  right: -40px;
   bottom: 100%;
   width: 520px;
   aspect-ratio: 688 / 418;
