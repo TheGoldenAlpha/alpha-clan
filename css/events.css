@@ -119,10 +119,10 @@
 /* Video steht rechts auf dem Block, direkt bei den Event-Karten */
 .ev-stage .fighter {
   position: absolute;
-  right: -150px;
+  right: -100px;
   bottom: 100%;
-  width: 420px;
-  aspect-ratio: 500 / 474;
+  width: 520px;
+  aspect-ratio: 688 / 380;
 }
 /* Karten liegen ueber dem Video, falls sich etwas ueberschneidet */
 main.wrap { position: relative; z-index: 3; }
@@ -152,7 +152,7 @@ main.wrap { position: relative; z-index: 3; }
   .ev-stage { height: 330px; }
   .ev-block.l { width: 52%; height: 70px; }
   .ev-block.r { width: 22%; height: 120px; }
-  .ev-stage .fighter { right: 0; width: min(100%, 300px); }
+  .ev-stage .fighter { right: 0; width: min(100%, 420px); }
 }
 
 @media (max-width: 560px) {
@@ -160,5 +160,5 @@ main.wrap { position: relative; z-index: 3; }
   .ev-stage { height: 300px; }
   .ev-block.l { width: 70%; }
   .ev-block.r { width: 16%; }
-  .ev-stage .fighter { width: min(100%, 270px); }
+  .ev-stage .fighter { width: min(100%, 300px); }
 }
