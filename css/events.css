@@ -107,8 +107,9 @@
   position: absolute;
   bottom: -3px;
   background-color: var(--stone);
-  background-image: linear-gradient(180deg, #3a3350 0 var(--cap), transparent var(--cap)), var(--bricks);
-  background-size: 100% 100%, calc(var(--brick-w) * 6) calc(var(--brick-h) * 6);
+  background-image: var(--capstones), var(--bricks);
+  background-size: calc(var(--brick-w) * 6) var(--cap), calc(var(--brick-w) * 6) calc(var(--brick-h) * 6);
+  background-repeat: repeat-x, repeat;
   background-position: left top, left bottom;
   border-top: var(--rim);
 }
