@@ -83,6 +83,17 @@
 
 .event .desc { flex: 1; }
 
+/* Ganze Karte funktioniert als Link (nur wenn es einen Link gibt) */
+.event a.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.event:has(a.btn) { cursor: pointer; }
+.event a.btn:active { transform: none; }
+.event:has(a.btn):hover a.btn { color: var(--btn-ink); background: var(--yellow); }
+
 /* Steinbloecke links und rechts mit Video */
 .ev-stage {
   --rim: 3px solid var(--edge);
@@ -105,14 +116,16 @@
 .ev-block.r { right: 0; width: calc(var(--side) - 30px); height: 200px; border-left: var(--rim); }
 .ev-stage + footer { position: relative; z-index: 1; }
 
+/* Video steht rechts auf dem Block, direkt bei den Event-Karten */
 .ev-stage .fighter {
   position: absolute;
-  left: 50%;
+  right: -150px;
   bottom: 100%;
-  width: min(calc(var(--side) - 40px), 440px);
-  aspect-ratio: 640 / 336;
-  transform: translateX(-50%);
+  width: 420px;
+  aspect-ratio: 500 / 474;
 }
+/* Karten liegen ueber dem Video, falls sich etwas ueberschneidet */
+main.wrap { position: relative; z-index: 3; }
 .ev-stage .fighter canvas {
   position: absolute;
   left: 0;
@@ -136,15 +149,16 @@
 
 /* Schmalere Bildschirme: Bloecke unter den Events statt daneben */
 @media (max-width: 1499px) {
-  .ev-stage { height: 230px; }
+  .ev-stage { height: 330px; }
   .ev-block.l { width: 52%; height: 70px; }
   .ev-block.r { width: 22%; height: 120px; }
-  .ev-stage .fighter { width: min(92%, 420px); }
+  .ev-stage .fighter { right: 0; width: min(100%, 300px); }
 }
 
 @media (max-width: 560px) {
   .grid { grid-template-columns: 1fr; }
-  .ev-stage { height: 200px; }
+  .ev-stage { height: 300px; }
   .ev-block.l { width: 70%; }
   .ev-block.r { width: 16%; }
+  .ev-stage .fighter { width: min(100%, 270px); }
 }
