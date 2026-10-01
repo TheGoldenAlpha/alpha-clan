@@ -97,23 +97,38 @@
 /* Steinbloecke links und rechts mit Video */
 .ev-stage {
   --rim: 3px solid var(--edge);
-  --side: calc((100vw - 1120px) / 2);
+  --side: calc((100% - 1120px) / 2);
   position: relative;
   z-index: 2;
   height: 0;
   pointer-events: none;
 }
+/* Ziegel genau im gleichen Raster wie der Footer:
+   Hoehe = 21px (Rand + Kante) + ganze Ziegelreihen a 17px,
+   linke Kante der Bloecke immer auf einem Vielfachen von 36px */
 .ev-block {
   position: absolute;
   bottom: -3px;
   background-color: var(--stone);
-  background-image: var(--bricks), linear-gradient(180deg, #3a3350 0 var(--cap), transparent var(--cap));
-  background-size: var(--brick-w) var(--brick-h), var(--brick-w) var(--brick-h), 100% 100%;
-  background-position: left bottom;
+  background-image: linear-gradient(#3a3350, #3a3350), var(--bricks);
+  background-size: 100% calc(var(--cap) + 3px), var(--brick-w) var(--brick-h), var(--brick-w) var(--brick-h);
+  background-repeat: no-repeat, repeat, repeat;
+  background-position: left top, left bottom, left bottom;
+  background-origin: border-box;
   border-top: var(--rim);
 }
-.ev-block.l { left: 0;  width: calc(var(--side) - 12px); height: 130px; border-right: var(--rim); }
-.ev-block.r { right: 0; width: calc(var(--side) - 30px); height: 200px; border-left: var(--rim); }
+.ev-block.l {
+  left: 0;
+  width: calc(var(--side) - 12px);
+  height: calc(21px + var(--brick-h) * 6);
+  border-right: var(--rim);
+}
+.ev-block.r {
+  left: round(down, calc(50% + 590px), var(--brick-w));
+  right: 0;
+  height: calc(21px + var(--brick-h) * 10);
+  border-left: var(--rim);
+}
 .ev-stage + footer { position: relative; z-index: 1; }
 
 /* Video steht rechts auf dem Block, direkt bei den Event-Karten */
@@ -150,8 +165,8 @@ main.wrap { position: relative; z-index: 3; }
 /* Schmalere Bildschirme: Bloecke unter den Events statt daneben */
 @media (max-width: 1499px) {
   .ev-stage { height: 330px; }
-  .ev-block.l { width: 52%; height: 70px; }
-  .ev-block.r { width: 22%; height: 120px; }
+  .ev-block.l { width: 52%; height: calc(21px + var(--brick-h) * 3); }
+  .ev-block.r { left: round(down, 78%, var(--brick-w)); height: calc(21px + var(--brick-h) * 6); }
   .ev-stage .fighter { right: 0; width: min(100%, 420px); }
 }
 
@@ -159,6 +174,6 @@ main.wrap { position: relative; z-index: 3; }
   .grid { grid-template-columns: 1fr; }
   .ev-stage { height: 300px; }
   .ev-block.l { width: 70%; }
-  .ev-block.r { width: 16%; }
+  .ev-block.r { left: round(down, 84%, var(--brick-w)); }
   .ev-stage .fighter { width: min(100%, 300px); }
 }

@@ -135,3 +135,17 @@
 
   document.querySelectorAll(".fighter").forEach(fighter);
 })();
+
+// Ziegel der Arena-Steine genau auf das 36px-Raster vom Footer ausrichten
+(function () {
+  function align() {
+    document.querySelectorAll(".stone, .block").forEach(el => {
+      const x = Math.round(el.getBoundingClientRect().left + window.scrollX);
+      const off = -(((x % 36) + 36) % 36);
+      el.style.backgroundPosition = `left top, ${off}px bottom, ${off}px bottom`;
+    });
+  }
+  align();
+  addEventListener("resize", align);
+  addEventListener("load", align);
+})();
