@@ -17,7 +17,7 @@
     void main() {
       vec3 color = texture2D(tex, vec2(uv.x, uv.y * .5)).rgb;
       float alpha = texture2D(tex, vec2(uv.x, .5 + uv.y * .5)).r;
-      alpha = smoothstep(.15, .85, alpha) * smoothstep(0., .14, uv.y);
+      alpha = smoothstep(.15, .85, alpha);
       gl_FragColor = vec4(color * alpha, alpha);
     }`;
 
