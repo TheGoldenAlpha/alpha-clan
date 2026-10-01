@@ -147,18 +147,6 @@ main.wrap { position: relative; z-index: 3; }
   height: auto;
 }
 .ev-stage .fighter.empty canvas { visibility: hidden; }
-.ev-stage .fighter.empty::before {
-  content: attr(data-label);
-  position: absolute;
-  inset: 8% 20% 0;
-  display: grid;
-  place-items: center;
-  font-family: var(--px);
-  font-size: 13px;
-  letter-spacing: 3px;
-  color: #4d4868;
-  border: 2px dashed var(--line);
-}
 
 /* Schmalere Bildschirme: Bloecke unter den Events statt daneben */
 @media (max-width: 1499px) {
