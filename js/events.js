@@ -31,7 +31,6 @@
       </article>`;
   }
 
-  $("grid").innerHTML = (typeof EVENTS !== "undefined" ? EVENTS : []).map(card).join("") +
-    `<div class="watcher" aria-hidden="true"><img src="images/golden-alpha-links.webp" alt=""></div>`;
+  $("grid").innerHTML = (typeof EVENTS !== "undefined" ? EVENTS : []).map(card).join("");
   $("kontakt").textContent = typeof KONTAKT !== "undefined" ? KONTAKT : "";
 })();
