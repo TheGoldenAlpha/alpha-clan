@@ -423,11 +423,9 @@ body {
   --u: calc(var(--fw) / 1912);
   --step: calc(var(--u) * 132);
   --rim: 3px solid var(--edge);
-  /* Ziegel ueberall gleich gross (36 x 17 aus base.css), damit das Raster sauber ist.
-     Hoehen der Steine auf ganze Ziegelreihen gerundet. */
-  --cap: 18px;
-  --h2: calc(round(nearest, calc(var(--step) * 2 - 3px - var(--cap)), var(--brick-h)) + var(--cap) + 6px);
-  --h1: calc(round(nearest, calc(var(--step) - 3px - var(--cap)), var(--brick-h)) + var(--cap) + 6px);
+  --brick-w: calc(var(--u) * 35);
+  --brick-h: calc(var(--u) * 16.4);
+  --cap: calc(var(--u) * 18);
 }
 
 .arena {
@@ -445,18 +443,16 @@ body {
 .stone,
 .block {
   background-color: var(--stone);
-  background-image: linear-gradient(#3a3350, #3a3350), var(--bricks);
-  background-size: 100% calc(var(--cap) + 3px), var(--brick-w) var(--brick-h), var(--brick-w) var(--brick-h);
-  background-repeat: no-repeat, repeat, repeat;
-  background-position: left top, left bottom, left bottom;
-  background-origin: border-box;
+  background-image: linear-gradient(180deg, #3a3350 0 var(--cap), transparent var(--cap)), var(--bricks);
+  background-size: 100% 100%, calc(var(--brick-w) * 6) calc(var(--brick-h) * 6);
+  background-position: left top, left bottom;
   border-top: var(--rim);
 }
 
 .stone {
   position: relative;
   margin-bottom: -3px;
-  height: var(--h2);
+  height: calc(var(--step) * 2 + 3px);
 }
 .wall   { flex: 1; min-width: 0; }
 .center { flex: none; width: calc(var(--fw) * var(--gap)); }
@@ -482,9 +478,9 @@ body {
 .block {
   position: absolute;
   bottom: -3px;
-  height: var(--h1);
+  height: calc(var(--step) + 3px);
 }
-.block.hi   { width: calc(var(--u) * 191); height: var(--h2); }
+.block.hi   { width: calc(var(--u) * 191); height: calc(var(--step) * 2 + 3px); }
 .block.base { width: calc(var(--u) * 141); }
 .block.l.hi   { left: 0; }
 .block.l.base { left: calc(var(--u) * 191); border-right: var(--rim); }
@@ -495,7 +491,7 @@ body {
   content: "";
   position: absolute;
   top: -3px;
-  height: calc(var(--h2) - var(--h1) + 3px);
+  height: calc(var(--step) + 3px);
 }
 .block.l.hi::after { right: -3px; border-right: var(--rim); }
 .block.r.hi::after { left: -3px;  border-left: var(--rim); }
