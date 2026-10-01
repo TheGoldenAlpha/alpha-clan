@@ -1,7 +1,7 @@
 const DATEN = {
 
-  datum:   "Saturday, 17 October 2026",
-  uhrzeit: "3:00 PM",
+  datum:   "",
+  uhrzeit: "",
 
   autoNeuLaden: 60,
 
