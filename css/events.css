@@ -83,6 +83,20 @@
 
 .event .desc { flex: 1; }
 
+.watcher {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  pointer-events: none;
+}
+.watcher img {
+  width: 168px;
+  height: auto;
+  margin-left: -6px;
+}
+
 @media (max-width: 560px) {
   .grid { grid-template-columns: 1fr; }
+  .watcher { justify-content: flex-end; margin-top: -10px; }
+  .watcher img { width: 130px; }
 }

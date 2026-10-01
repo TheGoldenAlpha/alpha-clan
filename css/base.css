@@ -434,6 +434,16 @@ footer {
   border-top: 3px solid var(--edge);
 }
 footer img  { height: 40px; width: auto; image-rendering: pixelated; }
+footer:has(.footer-alpha) { padding-top: 124px; }
+footer span { position: relative; }
+footer .footer-alpha {
+  position: absolute;
+  left: -14px;
+  bottom: calc(100% + 1px);
+  width: 168px;
+  height: auto;
+  pointer-events: none;
+}
 footer b    { color: var(--gold); }
 footer span {
   padding: 8px 16px;
@@ -445,6 +455,8 @@ footer span {
 }
 
 @media (max-width: 760px) {
+  footer .footer-alpha { width: 120px; left: -8px; }
+  footer:has(.footer-alpha) { padding-top: 96px; }
   .topbar     { padding: 8px 16px; }
   .brand img  { height: 40px; }
   .brand span { font-size: 18px; letter-spacing: 2px; }
