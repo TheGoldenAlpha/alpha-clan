@@ -1,0 +1,89 @@
+/* Ziegel gleich gross wie auf der Startseite (gleiche Formel wie in home.css) */
+body {
+  --fw: min(calc((100vw - 20px) / 2.2), 900px);
+  --u: calc(var(--fw) / 1912);
+  --brick-w: calc(var(--u) * 35);
+  --brick-h: calc(var(--u) * 16.4);
+  --cap: calc(var(--u) * 18);
+}
+@media (max-width: 760px) {
+  body { --fw: calc(100vw - 36px); }
+}
+
+.hero .sub { margin-top: 18px; }
+
+.plate {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 6px;
+  padding: 9px 18px;
+  font-family: var(--px);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--brown);
+  background: var(--panel);
+  border: 3px solid #35313f;
+  box-shadow: 0 4px 0 var(--shadow);
+}
+
+/* Fragen zum Aufklappen */
+.faq {
+  display: grid;
+  gap: 14px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.qa {
+  background: var(--panel);
+  border: 3px solid #35313f;
+  box-shadow: 0 6px 0 var(--shadow);
+}
+.qa[open] { border-color: var(--edge2); }
+
+.qa summary {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  font-family: var(--px);
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: var(--cream);
+  cursor: pointer;
+  list-style: none;
+}
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary::before {
+  content: "+";
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  font-size: 20px;
+  color: var(--btn-ink);
+  background: var(--btn);
+  border: 3px solid var(--btn-edge);
+}
+.qa[open] summary::before { content: "\2212"; }
+.qa summary:hover { color: var(--yellow); }
+.qa summary:focus-visible { outline: 3px solid var(--yellow); outline-offset: -3px; }
+
+.ans {
+  padding: 0 18px 18px 60px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--soft);
+}
+.ans p + p, .ans ul + p { margin-top: 10px; }
+.ans b { color: var(--gold); }
+.ans a { color: var(--gold); font-weight: 700; }
+.ans ul { padding-left: 20px; }
+.ans li + li { margin-top: 4px; }
+.ans li::marker { color: var(--yellow); }
+
+@media (max-width: 560px) {
+  .qa summary { font-size: 15px; padding: 14px; gap: 10px; }
+  .ans { padding: 0 14px 16px 14px; }
+}
