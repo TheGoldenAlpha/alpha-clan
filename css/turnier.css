@@ -393,6 +393,12 @@ body {
   box-shadow: none;
 }
 .item .tag { font-size: 10px; }
+.item .utext {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--gold);
+}
 
 .awards {
   display: grid;

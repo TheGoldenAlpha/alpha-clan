@@ -11,24 +11,25 @@ const DATEN = {
   autoNeuLaden: 60,
 
   hideAndSeek: [
-    { account: "", preisText: "", preisIcon: "", gefundenVon: "" },
-    { account: "", preisText: "", preisIcon: "", gefundenVon: "" },
+    { account: "", preisText: "Red Dragon Ring", preisIcon: "GoBattle_Icons/Ultras/21_Red_Dragon_Ring.png", gefundenVon: "" },
+    { account: "", preisText: "Epic Instant Defense Cloak", preisIcon: "GoBattle_Icons/Ultras/27_Epic_Instant_Defense_Cloak.png", gefundenVon: "" },
     { account: "", preisText: "", preisIcon: "", gefundenVon: "" },
     { account: "", preisText: "", preisIcon: "", gefundenVon: "" },
     { account: "", preisText: "", preisIcon: "", gefundenVon: "" },
   ],
+  // text = Name unter dem Bild (z.B. "2x Invincibility Potion")
   hideAndSeekUltrare: [
-    { bild: "", gewinner: "" },
-    { bild: "", gewinner: "" },
-    { bild: "", gewinner: "" },
+    { text: "2x Invincibility Potion", bild: "GoBattle_Icons/Ultras/32_Invincibility_Potion.png", gewinner: "" },
+    { text: "Hermes Boots", bild: "GoBattle_Icons/Ultras/30_Hermes_Boots.png", gewinner: "" },
+    { text: "Normal Invisibility", bild: "GoBattle_Icons/Ultras/29_Normal_Invisibility.png", gewinner: "" },
   ],
 
-  jumpErsterPlatz:     { preisText: "", preisIcon: "", gewinner: "" },
-  jumpUnterLevel150:   { preisText: "", preisIcon: "", gewinner: "" },
+  jumpErsterPlatz:     { preisText: "Greed's Grip (Level 1)", preisIcon: "GoBattle_Icons/Relics/Greeds_Grip.png", gewinner: "" },
+  jumpUnterLevel150:   { preisText: "Inferno Touch (Level 1)", preisIcon: "GoBattle_Icons/Relics/Inferno_Touch.png", gewinner: "" },
   jumpUltrare: [
-    { bild: "", gewinner: "" },
-    { bild: "", gewinner: "" },
-    { bild: "", gewinner: "" },
+    { text: "2x Invincibility Potion", bild: "GoBattle_Icons/Ultras/32_Invincibility_Potion.png", gewinner: "" },
+    { text: "Hermes Boots", bild: "GoBattle_Icons/Ultras/30_Hermes_Boots.png", gewinner: "" },
+    { text: "Normal Invisibility", bild: "GoBattle_Icons/Ultras/29_Normal_Invisibility.png", gewinner: "" },
   ],
 
   battleRoyale: ["", "", "", ""],
@@ -39,13 +40,14 @@ const DATEN = {
   kleinesFinaleGewinner: "",
 
   pvpPreis1: { preisText: "Blue Dragon Ring", preisIcon: "GoBattle_Icons/Ultras/20_Blue_Dragon_Ring.png" },
-  pvpPreis2: { preisText: "", preisIcon: "" },
-  pvpPreis3: { preisText: "", preisIcon: "" },
-  pvpPreis4: { preisText: "", preisIcon: "" },
+  pvpPreis2: { preisText: "Inferno Touch", preisIcon: "GoBattle_Icons/Relics/Inferno_Touch.png" },
+  // Mehrere Items: preisIcon als Liste [ "...", "..." ]
+  pvpPreis3: { preisText: "Extreme Venom Cloak Protection + Hermes Boots", preisIcon: ["GoBattle_Icons/Ultras/18_Extreme_Venom_Cloak_Protection.png", "GoBattle_Icons/Ultras/30_Hermes_Boots.png"] },
+  pvpPreis4: { preisText: "Normal Invisibility", preisIcon: "GoBattle_Icons/Ultras/29_Normal_Invisibility.png" },
 
   pvpUltrare: [
-    { bild: "", gewinner: "" },
-    { bild: "", gewinner: "" },
-    { bild: "", gewinner: "" },
+    { text: "Extreme Invisibility Cloak", bild: "GoBattle_Icons/Ultras/31_Extreme_Invisibility_Cloak.png", gewinner: "" },
+    { text: "Hermes Boots", bild: "GoBattle_Icons/Ultras/30_Hermes_Boots.png", gewinner: "" },
+    { text: "Normal Invisibility", bild: "GoBattle_Icons/Ultras/29_Normal_Invisibility.png", gewinner: "" },
   ],
 };

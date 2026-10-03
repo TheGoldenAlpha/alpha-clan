@@ -8,11 +8,16 @@
 
   function prize(p) {
     p = p || {};
-    const text = has(p.preisText), icon = has(p.preisIcon);
-    if (!text && !icon) return '<div class="prize empty"><div class="ico"></div><div class="txt"></div></div>';
+    // preisIcon darf ein Bild oder eine Liste von Bildern sein
+    const icons = (Array.isArray(p.preisIcon) ? p.preisIcon : [p.preisIcon]).filter(has);
+    const text = has(p.preisText);
+    if (!text && !icons.length) return '<div class="prize empty"><div class="ico"></div><div class="txt"></div></div>';
+    const boxes = icons.length
+      ? icons.map(src => `<div class="ico">${img(src, p.preisText)}</div>`).join("")
+      : '<div class="ico empty"></div>';
     return `
       <div class="prize">
-        <div class="ico${icon ? "" : " empty"}">${icon ? img(p.preisIcon, p.preisText) : ""}</div>
+        ${boxes}
         <div class="txt">${esc(p.preisText)}</div>
       </div>`;
   }
@@ -21,7 +26,8 @@
     list = list && list.length ? list : [{}, {}, {}];
     return list.map((u, k) => `
       <div class="item">
-        <div class="box${has(u.bild) ? "" : " empty"}">${has(u.bild) ? img(u.bild, "Ultrare") : ""}</div>
+        <div class="box${has(u.bild) ? "" : " empty"}">${has(u.bild) ? img(u.bild, u.text || "Ultrare") : ""}</div>
+        ${has(u.text) ? `<span class="utext">${esc(u.text)}</span>` : ""}
         <span class="tag blue">Ultrare ${k + 1}</span>
         ${name(u.gewinner)}
       </div>`).join("");
