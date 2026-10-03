@@ -2,10 +2,12 @@ const DATEN = {
 
   // Jedes Minigame hat sein eigenes Datum und seine eigene Uhrzeit.
   // Leer lassen ("") = es wird "TBD" angezeigt.
+  // zeitzone = Schweizer Zeit (CEST = Sommerzeit, CET = Winterzeit; Umstellung am 25 Oct 2026 um 3 Uhr).
+  // iso = Datum und Uhrzeit für den "In my time zone"-Link (JJJJMMTTTHHMM, Schweizer Zeit).
   termine: {
-    jumpAndRun:  { datum: "Sun, 18 Oct 2026", uhrzeit: "7:30 PM" },
-    hideAndSeek: { datum: "Sun, 25 Oct 2026", uhrzeit: "7:30 PM" },
-    pvp:         { datum: "Sun, 1 Nov 2026",  uhrzeit: "7:30 PM" },
+    jumpAndRun:  { datum: "Sun, 18 Oct 2026", uhrzeit: "7:30 PM", zeitzone: "CEST", iso: "20261018T1930" },
+    hideAndSeek: { datum: "Sun, 25 Oct 2026", uhrzeit: "7:30 PM", zeitzone: "CET",  iso: "20261025T1930" },
+    pvp:         { datum: "Sun, 1 Nov 2026",  uhrzeit: "7:30 PM", zeitzone: "CET",  iso: "20261101T1930" },
   },
 
   autoNeuLaden: 60,

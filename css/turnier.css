@@ -119,6 +119,24 @@ body {
   color: var(--soft);
 }
 
+/* Zeitzone: "(Swiss time)" und Link "In my time zone" */
+.meta i .swiss {
+  font-size: 12px;
+  color: var(--brown);
+}
+a.tz {
+  display: inline-block;
+  font-family: var(--px);
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+a.tz:hover { color: var(--gold); }
+.meta i a.tz { display: block; margin-top: 4px; }
+
 /* Datum im Programm und bei jedem Minigame */
 .program .pdate {
   margin-left: auto;
@@ -134,6 +152,7 @@ body {
 }
 .when {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   margin-bottom: 14px;

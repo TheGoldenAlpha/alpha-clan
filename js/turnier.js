@@ -35,13 +35,19 @@
 
   // Termine pro Minigame
   const T = D.termine || {};
+  const NAMEN = ["Alpha Triathlon: Jump and Run", "Alpha Triathlon: Hide and Seek", "Alpha Triathlon: PvP"];
   [T.jumpAndRun, T.hideAndSeek, T.pvp].forEach((t, k) => {
     t = t || {};
     const n = k + 1, d = has(t.datum), u = has(t.uhrzeit);
+    const zeit = u ? t.uhrzeit + (has(t.zeitzone) ? " " + t.zeitzone : "") : "";
+    // Link zu timeanddate.com: zeigt die Zeit in jedem Land (p1=268 = Zürich, Schweiz)
+    const tz = has(t.iso)
+      ? `<a class="tz" href="https://www.timeanddate.com/worldclock/fixedtime.html?msg=${encodeURIComponent(NAMEN[k])}&iso=${esc(t.iso)}&p1=268" target="_blank" rel="noopener">In my time zone &#8599;</a>`
+      : "";
     $("d" + n).innerHTML = d ? esc(t.datum) : TBD;
-    $("t" + n).innerHTML = u ? esc(t.uhrzeit) : (d ? "Time TBD" : "");
-    $("p" + n).textContent = d ? t.datum + (u ? " · " + t.uhrzeit : "") : "Date TBD";
-    $("w" + n).innerHTML = `<span class="tag gold">WHEN</span><span>${d ? esc(t.datum) : "Date TBD"}${u ? " · " + esc(t.uhrzeit) : ""}</span>`;
+    $("t" + n).innerHTML = u ? esc(zeit) + " <small class=\"swiss\">(Swiss time)</small>" + tz : (d ? "Time TBD" : "");
+    $("p" + n).textContent = d ? t.datum + (u ? " · " + zeit : "") : "Date TBD";
+    $("w" + n).innerHTML = `<span class="tag gold">WHEN</span><span>${d ? esc(t.datum) : "Date TBD"}${u ? " · " + esc(zeit) + " (Swiss time)" : ""}</span>${tz}`;
   });
 
   $("hs").innerHTML = (D.hideAndSeek || []).map((r, k) => `
