@@ -21,7 +21,7 @@ const DATEN = {
   hideAndSeekUltrare: [
     { text: "2x Invincibility Potion", bild: "GoBattle_Icons/Ultras/32_Invincibility_Potion.png", gewinner: "" },
     { text: "Hermes Boots", bild: "GoBattle_Icons/Ultras/30_Hermes_Boots.png", gewinner: "" },
-    { text: "Normal Invisibility", bild: "GoBattle_Icons/Ultras/29_Normal_Invisibility.png", gewinner: "" },
+    { text: "Extreme Invisibility Cloak", bild: "GoBattle_Icons/Ultras/31_Extreme_Invisibility_Cloak.png", gewinner: "" },
   ],
 
   jumpErsterPlatz:     { preisText: "Greed's Grip (Level 1)", preisIcon: "GoBattle_Icons/Relics/Greeds_Grip.png", gewinner: "" },
