@@ -12,9 +12,9 @@ const DATEN = {
 
   hideAndSeek: [
     { account: "", preisText: "Red Dragon Ring", preisIcon: "GoBattle_Icons/Ultras/21_Red_Dragon_Ring.png", gefundenVon: "" },
-    { account: "", preisText: "Epic Instant Defense Cloak", preisIcon: "GoBattle_Icons/Ultras/27_Epic_Instant_Defense_Cloak.png", gefundenVon: "" },
-    { account: "", preisText: "Dice of Destiny (Level 1)", preisIcon: "GoBattle_Icons/Relics/Dice_of_Destiny.png", gefundenVon: "" },
     { account: "", preisText: "Iron Heart (Level 1)", preisIcon: "GoBattle_Icons/Relics/Iron_Heart.png", gefundenVon: "" },
+    { account: "", preisText: "Dice of Destiny (Level 1)", preisIcon: "GoBattle_Icons/Relics/Dice_of_Destiny.png", gefundenVon: "" },
+    { account: "", preisText: "Epic Instant Defense Cloak", preisIcon: "GoBattle_Icons/Ultras/27_Epic_Instant_Defense_Cloak.png", gefundenVon: "" },
   ],
   // text = Name unter dem Bild (z.B. "2x Invincibility Potion")
   hideAndSeekUltrare: [
