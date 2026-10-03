@@ -42,7 +42,7 @@ const DATEN = {
   pvpPreis1: { preisText: "Blue Dragon Ring", preisIcon: "GoBattle_Icons/Ultras/20_Blue_Dragon_Ring.png" },
   pvpPreis2: { preisText: "Inferno Touch", preisIcon: "GoBattle_Icons/Relics/Inferno_Touch.png" },
   // Mehrere Items: preisIcon als Liste [ "...", "..." ]
-  pvpPreis3: { preisText: "Extreme Venom Cloak Protection + Hermes Boots", preisIcon: ["GoBattle_Icons/Ultras/18_Extreme_Venom_Cloak_Protection.png", "GoBattle_Icons/Ultras/30_Hermes_Boots.png"] },
+  pvpPreis3: { preisText: "Venom Cloak + Hermes Boots", preisIcon: ["GoBattle_Icons/Ultras/28_Venom_Cloak.png", "GoBattle_Icons/Ultras/30_Hermes_Boots.png"] },
   pvpPreis4: { preisText: "Normal Invisibility", preisIcon: "GoBattle_Icons/Ultras/29_Normal_Invisibility.png" },
 
   pvpUltrare: [
