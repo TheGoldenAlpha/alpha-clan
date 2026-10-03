@@ -156,10 +156,11 @@ main.wrap { position: relative; z-index: 3; }
   .ev-stage .fighter { right: 0; width: min(100%, 420px); }
 }
 
+/* Auf dem Handy keine Steinbloecke und kein Video */
+@media (max-width: 760px) {
+  .ev-stage { display: none; }
+}
+
 @media (max-width: 560px) {
   .grid { grid-template-columns: 1fr; }
-  .ev-stage { height: 300px; }
-  .ev-block.l { width: 70%; }
-  .ev-block.r { width: 16%; }
-  .ev-stage .fighter { width: min(100%, 300px); }
 }
