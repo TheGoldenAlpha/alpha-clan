@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://alpha-clan.com/sitemap.xml
