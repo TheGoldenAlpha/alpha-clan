@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Alpha Triathlon – ALPHA CLAN</title>
+  <link rel="icon" href="images/alpha-clan-logo.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/turnier.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html"><img src="images/alpha-clan-logo.png" alt="Alpha Clan"><span>ALPHA CLAN</span></a>
+  <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+  <nav class="topnav" id="nav">
+    <a href="index.html">Home</a>
+    <a href="index.html#join">Join</a>
+    <a href="events.html" class="on">&larr; Events</a>
+    <a href="faq.html">FAQ</a>
+    <a class="dc" href="https://discord.gg/9Rd2j3bCZx" target="_blank" rel="noopener"><span class="i-discord"></span>DISCORD</a>
+  </nav>
+</header>
+
+<section class="hero split" id="top">
+  <div class="split-grid">
+    <div class="stage">
+      <div class="rays"></div>
+      <img class="crest" src="images/alpha-clan-logo.png" alt="Alpha Clan">
+      <div class="pedestal"></div>
+    </div>
+    <div>
+      <div class="kick"><span class="stud"></span>ALPHA CLAN PRESENTS<span class="stud"></span></div>
+      <h1 class="event-title"><span>THE ALPHA</span><span>TRIATHLON</span></h1>
+      <div class="disciplines"><b>HIDE</b><span class="stud"></span><b>JUMP</b><span class="stud"></span><b>FIGHT</b></div>
+      <div class="meta">
+        <div><small>1 · HIDE AND SEEK</small><b id="d1"></b><i id="t1"></i></div>
+        <div><small>2 · JUMP AND RUN</small><b id="d2"></b><i id="t2"></i></div>
+        <div><small>3 · PVP</small><b id="d3"></b><i id="t3"></i></div>
+      </div>
+      <div class="badges"><span>3 EVENTS</span><span>3 ULTRARES PER EVENT</span><span>PRIZES FOR THE WINNERS</span></div>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <div class="intro">
+    <div class="card">
+      <h3 class="ctitle">Program</h3>
+      <ul class="program">
+        <li><a href="#event1"><b>1</b><span>Hide and Seek</span><em class="pdate" id="p1"></em></a></li>
+        <li><a href="#event2"><b>2</b><span>Stardust Jump and Run</span><em class="pdate" id="p2"></em></a></li>
+        <li><a href="#event3"><b>3</b><span>PvP</span><em class="pdate" id="p3"></em></a></li>
+      </ul>
+      <div class="bonus"><span>&#10004;</span><span>At every event, <b>3 random players</b> each get an <b>Ultrare</b>!</span></div>
+    </div>
+    <div class="card feat">
+      <div class="card-head"><h3 class="ctitle">General Rules</h3><span class="tag gold">MUST READ</span></div>
+      <ul class="rulelist">
+        <li><b>No pots</b></li>
+        <li><b>No cheating</b></li>
+        <li>Everyone must record their game and send the recording to <b>thegoldenalpha_mc</b> via Discord or in-game.
+          <span class="tip">Tip: for large videos use WeTransfer (<a href="https://wetransfer.com" target="_blank" rel="noopener">wetransfer.com</a>) and send the link.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="head" id="event1"><h2>EVENT 1 · HIDE AND SEEK</h2></div>
+  <section class="card">
+    <div class="when" id="w1"></div>
+    <p class="lead">5 accounts are hiding. Find one and you get its reward.</p>
+    <div class="hs" id="hs"></div>
+    <div class="note"><span class="tag gold">RULE</span><span>Found an account? You decide: take the reward or keep searching. If you take the reward, you must stay at that spot and you are done. That way no one can win everything.</span></div>
+    <div class="divider">ULTRARE GIVEAWAY</div>
+    <div class="items" id="hsU"></div>
+  </section>
+
+  <div class="head" id="event2"><h2>EVENT 2 · STARDUST JUMP AND RUN</h2></div>
+  <section class="card">
+    <div class="when" id="w2"></div>
+    <p class="lead">Who can finish the course the fastest?</p>
+    <div class="awards" id="jr"></div>
+    <div class="divider">ULTRARE GIVEAWAY</div>
+    <div class="items" id="jrU"></div>
+  </section>
+
+  <div class="head" id="event3"><h2>EVENT 3 · PVP</h2></div>
+  <section class="card">
+    <div class="when" id="w3"></div>
+    <p class="lead">Battle Royale – everyone against everyone. The top 4 advance to the semi-finals.</p>
+    <div class="bracket" id="bracket"></div>
+    <div class="divider">WINNERS</div>
+    <div class="podium" id="podium"></div>
+    <div class="divider">ULTRARE GIVEAWAY</div>
+    <div class="items" id="pvpU"></div>
+  </section>
+
+</main>
+
+<footer>
+  <img src="images/gb-logo.png" alt="">
+  <span>The Alpha Triathlon · ALPHA CLAN · Fan-made. Not affiliated with the gobattle.io team.</span>
+</footer>
+
+<script src="data/alpha-triathlon.js"></script>
+<script src="js/common.js"></script>
+<script src="js/turnier.js"></script>
+</body>
+</html>

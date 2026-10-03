@@ -27,8 +27,16 @@
       </div>`).join("");
   }
 
-  $("datum").innerHTML   = has(D.datum)   ? esc(D.datum)   : TBD;
-  $("uhrzeit").innerHTML = has(D.uhrzeit) ? esc(D.uhrzeit) : TBD;
+  // Termine pro Minigame
+  const T = D.termine || {};
+  [T.hideAndSeek, T.jumpAndRun, T.pvp].forEach((t, k) => {
+    t = t || {};
+    const n = k + 1, d = has(t.datum), u = has(t.uhrzeit);
+    $("d" + n).innerHTML = d ? esc(t.datum) : TBD;
+    $("t" + n).innerHTML = u ? esc(t.uhrzeit) : (d ? "Time TBD" : "");
+    $("p" + n).textContent = d ? t.datum + (u ? " · " + t.uhrzeit : "") : "Date TBD";
+    $("w" + n).innerHTML = `<span class="tag gold">WHEN</span><span>${d ? esc(t.datum) : "Date TBD"}${u ? " · " + esc(t.uhrzeit) : ""}</span>`;
+  });
 
   $("hs").innerHTML = (D.hideAndSeek || []).map((r, k) => `
     <div class="hs-card${has(r.gefundenVon) ? " found" : ""}">
