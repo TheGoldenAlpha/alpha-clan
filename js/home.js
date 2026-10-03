@@ -128,9 +128,18 @@
     box.append(canvas, video);
 
     if (still) return;
+    let seen = false;
     new IntersectionObserver(([e]) => {
-      e.isIntersecting ? video.play().catch(() => {}) : video.pause();
+      seen = e.isIntersecting;
+      seen ? video.play().catch(() => {}) : video.pause();
     }, { rootMargin: "200px" }).observe(box);
+
+    // Nach dem Zurueck-Pfeil im Browser (Seite kommt aus dem Speicher) wieder abspielen
+    const resume = () => {
+      if (seen && document.visibilityState === "visible") video.play().catch(() => {});
+    };
+    addEventListener("pageshow", resume);
+    document.addEventListener("visibilitychange", resume);
   }
 
   document.querySelectorAll(".fighter").forEach(fighter);
