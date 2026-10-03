@@ -15,7 +15,6 @@ const DATEN = {
     { account: "", preisText: "Epic Instant Defense Cloak", preisIcon: "GoBattle_Icons/Ultras/27_Epic_Instant_Defense_Cloak.png", gefundenVon: "" },
     { account: "", preisText: "", preisIcon: "", gefundenVon: "" },
     { account: "", preisText: "", preisIcon: "", gefundenVon: "" },
-    { account: "", preisText: "", preisIcon: "", gefundenVon: "" },
   ],
   // text = Name unter dem Bild (z.B. "2x Invincibility Potion")
   hideAndSeekUltrare: [
