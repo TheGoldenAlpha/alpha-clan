@@ -6,7 +6,7 @@ const EVENTS = [
     status: "soon",
     beschreibung: "Jump. Hide. Fight. Stardust Jump and Run, Hide and Seek and PvP. 3 random players win an Ultrare at every event!",
     link: "alpha-triathlon.html",
-    bild: "",
+    bild: "images/alpha-triathlon.png",
   },
   {
     nummer: "?",
