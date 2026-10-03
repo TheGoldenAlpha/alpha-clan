@@ -35,7 +35,7 @@
 
   // Termine pro Minigame
   const T = D.termine || {};
-  [T.hideAndSeek, T.jumpAndRun, T.pvp].forEach((t, k) => {
+  [T.jumpAndRun, T.hideAndSeek, T.pvp].forEach((t, k) => {
     t = t || {};
     const n = k + 1, d = has(t.datum), u = has(t.uhrzeit);
     $("d" + n).innerHTML = d ? esc(t.datum) : TBD;

@@ -3,9 +3,9 @@ const DATEN = {
   // Jedes Minigame hat sein eigenes Datum und seine eigene Uhrzeit.
   // Leer lassen ("") = es wird "TBD" angezeigt.
   termine: {
-    hideAndSeek: { datum: "", uhrzeit: "" },
-    jumpAndRun:  { datum: "", uhrzeit: "" },
-    pvp:         { datum: "", uhrzeit: "" },
+    jumpAndRun:  { datum: "Sun, 18 Oct 2026", uhrzeit: "7:30 PM" },
+    hideAndSeek: { datum: "Sun, 25 Oct 2026", uhrzeit: "7:30 PM" },
+    pvp:         { datum: "Sun, 1 Nov 2026",  uhrzeit: "7:30 PM" },
   },
 
   autoNeuLaden: 60,

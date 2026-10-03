@@ -2,9 +2,9 @@ const EVENTS = [
   {
     nummer: "1",
     titel: "The Alpha Triathlon",
-    datum: "",
+    datum: "18 Oct, 25 Oct & 1 Nov 2026 · 7:30 PM",
     status: "soon",
-    beschreibung: "Hide. Jump. Fight. Hide and Seek, Stardust Jump and Run and PvP. 3 random players win an Ultrare at every event!",
+    beschreibung: "Jump. Hide. Fight. Stardust Jump and Run, Hide and Seek and PvP. 3 random players win an Ultrare at every event!",
     link: "alpha-triathlon.html",
     bild: "",
   },
