@@ -83,7 +83,25 @@ body {
 .ans li + li { margin-top: 4px; }
 .ans li::marker { color: var(--yellow); }
 
+/* Kasten unten: weitere Fragen auf Discord */
+.more {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 860px;
+  margin: 34px auto 0;
+  padding: 20px 22px;
+  background: #221a12;
+  border: 3px solid var(--edge2);
+  box-shadow: 0 6px 0 var(--shadow);
+}
+.more p { margin-top: 4px; color: var(--soft); }
+.more b { color: var(--gold); }
+.more .btn { flex: none; }
+
 @media (max-width: 560px) {
+  .more { flex-direction: column; align-items: flex-start; }
   .qa summary { font-size: 15px; padding: 14px; gap: 10px; }
   .ans { padding: 0 14px 16px 14px; }
 }
