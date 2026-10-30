@@ -1,0 +1,305 @@
+.hero .sub { margin-top: 18px; }
+
+.tag.orange { color: #ffb36b; border-color: #8a4f1c; }
+
+/* Sprung zu den Kategorien */
+.jump {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.jump .tag {
+  padding: 8px 14px;
+  font-size: 13px;
+  text-decoration: none;
+  box-shadow: 0 3px 0 var(--shadow);
+}
+.jump .tag:hover { color: var(--hover); border-color: var(--edge2); }
+
+.kat + .kat { margin-top: 46px; }
+.kat .head { margin-bottom: 10px; }
+.kat-text {
+  margin-bottom: 22px;
+  text-align: center;
+  font-size: 14.5px;
+  color: var(--muted);
+}
+
+/* Karten mit Thumbnail */
+.tgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.tcard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  background: var(--panel);
+  border: 3px solid var(--edge);
+  box-shadow: 0 7px 0 var(--shadow), inset 0 0 0 3px var(--in);
+  transition: transform 90ms steps(3), box-shadow 90ms steps(3);
+  -webkit-tap-highlight-color: transparent;
+}
+.tcard:hover,
+.tcard:focus-visible {
+  outline: none;
+  border-color: var(--edge2);
+  transform: translateY(-4px);
+  box-shadow: 0 11px 0 var(--shadow), inset 0 0 0 3px #3a3350;
+}
+.tcard.soon { border-color: #35313f; }
+
+.tthumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  margin: 6px 6px 0;
+  overflow: hidden;
+  background: var(--well);
+  border: 3px solid var(--slot);
+}
+.tthumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Platzhalter ohne Thumbnail: Logo auf dunklem Grund */
+.tthumb.empty {
+  background: var(--well) url("../images/alpha-clan-logo.png") center / auto 62% no-repeat;
+}
+.tthumb.empty::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 15, 24, .55);
+}
+
+.play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 54px;
+  height: 38px;
+  transform: translate(-50%, -50%);
+  background: var(--youtube);
+  border: 3px solid var(--youtube2);
+  box-shadow: 0 4px 0 var(--shadow);
+  opacity: 0;
+  transition: opacity 90ms steps(2);
+}
+.play::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-35%, -50%);
+  border-style: solid;
+  border-width: 8px 0 8px 13px;
+  border-color: transparent transparent transparent #fff;
+}
+.tcard:hover .play,
+.tcard:focus-visible .play { opacity: 1; }
+.tcard.soon .play { display: none; }
+
+.tinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px 16px;
+}
+.ttitle {
+  font-family: var(--px);
+  font-size: 21px;
+  letter-spacing: 1px;
+  line-height: 1.15;
+  color: var(--cream);
+  text-shadow: 2px 2px 0 var(--shadow);
+}
+.tmeta { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* Sterne */
+.rating {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--brown);
+}
+.stars { display: inline-flex; gap: 3px; }
+.stars i {
+  width: 14px;
+  height: 14px;
+  background: #3a3650;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 7' shape-rendering='crispEdges'%3E%3Cpath d='M3 0h1v2h3v1H6v1H5v1h1v2H5V6H2v1H1V5h1V4H1V3H0V2h3z'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 7' shape-rendering='crispEdges'%3E%3Cpath d='M3 0h1v2h3v1H6v1H5v1h1v2H5V6H2v1H1V5h1V4H1V3H0V2h3z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.stars i.on   { background: var(--yellow); }
+.stars i.half { background: linear-gradient(90deg, var(--yellow) 50%, #3a3650 50%); }
+.rating.big { margin: 4px 0 14px; font-size: 14px; }
+.rating.big .stars i { width: 20px; height: 20px; }
+
+/* Platzhalter fuer Daten, die noch kommen */
+.ph {
+  display: inline-block;
+  padding: 1px 8px;
+  font-family: var(--px);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--brown);
+  border: 2px dashed var(--line);
+}
+
+/* ---------- Fenster ---------- */
+.tut {
+  width: min(880px, calc(100% - 28px));
+  max-width: none;
+  max-height: calc(100% - 28px);
+  margin: auto;
+  padding: 0;
+  color: var(--text);
+  background: var(--panel);
+  border: 3px solid var(--edge2);
+  box-shadow: 0 10px 0 var(--shadow), inset 0 0 0 3px var(--in);
+  overscroll-behavior: contain;
+}
+.tut::backdrop { background: rgba(6, 5, 10, .82); }
+.tut[open] { animation: drop 140ms steps(3); }
+
+.tut-box { position: relative; }
+
+.tut-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  font-family: var(--px);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--cream);
+  background: var(--panel2);
+  border: 2px solid var(--line);
+  box-shadow: 0 3px 0 var(--shadow);
+}
+.tut-close:hover { color: var(--hover); border-color: var(--edge2); }
+
+.tut-video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-bottom: 3px solid var(--edge);
+}
+.tut-video iframe,
+.tut-video video,
+.vph,
+.vph img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.vph {
+  position: relative;
+  background:
+    linear-gradient(rgba(12, 15, 24, .7), rgba(12, 15, 24, .7)),
+    var(--well) url("../images/alpha-clan-logo.png") center / auto 55% no-repeat;
+}
+.vph img { object-fit: cover; filter: brightness(.45); }
+.vph-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  transform: translate(-50%, -50%);
+  font-family: var(--px);
+  font-size: 15px;
+  letter-spacing: 3px;
+  white-space: nowrap;
+  color: var(--cream);
+  text-shadow: 2px 2px 0 var(--shadow);
+}
+.vph-label .play {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  opacity: 1;
+}
+
+.tut-body { padding: 20px 24px 26px; }
+.tut-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.tut .ctitle { font-size: 30px; }
+.tut-desc { margin-bottom: 18px; font-size: 15px; color: var(--soft); }
+
+.tut-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.tut-info div {
+  padding: 10px 12px;
+  background: var(--well);
+  border: 2px solid var(--slot);
+}
+.tut-info dt {
+  margin-bottom: 4px;
+  font-family: var(--px);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--brown);
+}
+.tut-info dd { font-size: 14.5px; color: var(--cream); }
+
+.tut-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-bottom: 22px;
+}
+.tut-h {
+  margin-bottom: 8px;
+  font-family: var(--px);
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: var(--gold);
+}
+.tut-list { display: grid; gap: 6px; padding-left: 22px; font-size: 14.5px; }
+.tut-list li::marker { color: var(--brown); }
+
+.tut-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.tut-cta .btn { font-size: 13px; }
+
+body:has(.tut[open]) { overflow: hidden; }
+
+@media (max-width: 560px) {
+  .tgrid { grid-template-columns: 1fr; gap: 18px; }
+  .tut { width: 100%; max-height: 100%; height: 100%; border-width: 0; box-shadow: none; }
+  .tut-body { padding: 16px 16px 22px; }
+  .tut .ctitle { font-size: 25px; }
+  .tut-cols { grid-template-columns: 1fr; gap: 16px; }
+  .tut-info { grid-template-columns: 1fr 1fr; }
+  .tut-cta { flex-direction: column; }
+  .tut-cta .btn { align-self: stretch; justify-content: center; }
+  .tut-close { top: 8px; right: 8px; }
+  .vph-label { font-size: 12px; }
+}
