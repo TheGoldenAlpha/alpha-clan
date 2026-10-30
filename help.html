@@ -7,7 +7,7 @@
   <meta name="robots" content="noindex">
   <link rel="icon" href="images/alpha-clan-logo.png">
   <link rel="stylesheet" href="css/base.css?v=2">
-  <link rel="stylesheet" href="css/help.css">
+  <link rel="stylesheet" href="css/help.css?v=2">
 </head>
 <body>
 
@@ -32,10 +32,56 @@
   </div>
   <h1 class="title">HELP</h1>
   <p class="sub">Tutorials from the Alpha Clan. Made for beginners: always the easiest and safest way.</p>
-  <div class="jump" id="jump"></div>
 </section>
 
-<main class="wrap" id="help"></main>
+<main class="wrap">
+
+  <!-- Startansicht: die Kategorien -->
+  <div id="view-home">
+    <div class="head"><h2>CHOOSE A CATEGORY</h2></div>
+    <div class="kats" id="kats"></div>
+  </div>
+
+  <!-- Eine Kategorie mit Suche und Filtern -->
+  <div id="view-kat" hidden>
+    <a class="back" href="#">&larr; ALL CATEGORIES</a>
+    <div class="head"><h2 id="kat-title"></h2></div>
+    <p class="kat-text" id="kat-text"></p>
+
+    <div class="filters">
+      <label class="search">
+        <span class="i-search" aria-hidden="true"></span>
+        <input id="f-q" type="search" placeholder="Search by name..." autocomplete="off" aria-label="Search by name">
+      </label>
+      <div class="frow">
+        <div class="chips" id="f-diff" role="group" aria-label="Difficulty"></div>
+        <div class="fright">
+          <label class="check"><input type="checkbox" id="f-video"><span>ONLY WITH VIDEO</span></label>
+          <label class="sort">
+            <span>SORT</span>
+            <select id="f-sort" aria-label="Sort">
+              <option value="default">Recommended</option>
+              <option value="name">Name A-Z</option>
+              <option value="easy">Easiest first</option>
+              <option value="hard">Hardest first</option>
+              <option value="rating">Best rated</option>
+              <option value="short">Shortest first</option>
+              <option value="long">Longest first</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="count" id="f-count"></div>
+    <div class="tgrid" id="grid"></div>
+    <div class="none" id="none" hidden>
+      <p>No tutorials found.</p>
+      <button class="btn ghost" type="button" id="f-reset">RESET FILTERS</button>
+    </div>
+  </div>
+
+</main>
 
 <dialog class="tut" id="tut" aria-labelledby="tut-title">
   <div class="tut-box">
@@ -65,8 +111,8 @@
 </footer>
 
 <script src="data/events.js"></script>
-<script src="data/help.js"></script>
+<script src="data/help.js?v=2"></script>
 <script src="js/common.js"></script>
-<script src="js/help.js"></script>
+<script src="js/help.js?v=2"></script>
 </body>
 </html>
